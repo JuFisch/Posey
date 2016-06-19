@@ -1,0 +1,51 @@
+.image_outer {
+	width:100%;
+	margin:0 auto;
+	padding: 0; 
+	background: url(https://source.unsplash.com/category/nature/1600x900); 
+	repeat-x; 
+	height:100%;
+}
+
+.header {
+	padding-top: 24px;
+	padding-left: 36px;
+	/*color: #2ECC71;
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #28B463;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.7);
+	padding-top: 18px;
+	padding-bottom: 18px;
+	margin-left: 0;
+	margin-right: 0;*/
+}
+
+#title {
+	font-family: Lobster;
+	color: white;
+	font-size: 56px;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+#main-nav {
+	align: right;
+	margin-top: 66px;
+}
+
+#navlist {
+	text-align: right;
+	font-size: 18px;
+}
+
+li {
+	display: inline;
+	list-style-type: none;
+	padding: 16px;
+}
+
+.well {
+	background: rgba(255, 255, 255, 0);
+	color: white;
+}

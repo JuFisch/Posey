@@ -1,0 +1,206 @@
+<DOCTYPE HTML>
+<html>
+<head>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="yogalolz.js"></script>
+
+<script>
+var nouns = [ 
+  "chocolate",
+  "asparagus",
+  "teacup pig", 
+  "cuttlefish",
+  "firetruck",
+  "beer bottle",
+  "hipster",
+  "centipede",
+  "Republican",
+  "Bernie Sanders",
+  "puppy",
+  "cheese",
+  "starfish",
+  "fish",
+  "firefly",
+  "drop bear",
+  "cane toad",
+  "kangaroo",
+  "Australian",
+  "plank"
+];
+
+var prefixes = [
+  "extended",
+  "half",
+  "reclined",
+  "one-legged",
+  "head-to-knee",
+  "revolved"
+];
+
+var suffixes = [
+  "I",
+  "II",
+  "III",
+];
+
+var adjectives = [
+  "chocolatey",
+  "artisanal",
+  "organic",
+  "comatose",
+  "supine",
+  "buzzed",
+  "bound",
+  "planking",
+  "naked",
+  "fragrant",
+  "windy",
+  "trembling",
+  "salty",
+  "candy-coated",
+  "tipsy",
+  "sunburned",
+  "overpaid",
+  "disenfranchised",
+];
+
+var directions = [
+  "downward",
+  "upward",
+  "eastward",
+  "westward",
+  "northward",
+  "southward",
+ ];
+
+
+var words = {
+  "noun": nouns,
+  "prefix": prefixes,
+  "suffix": suffixes,
+  "adjective": adjectives,
+  "verb": ["flying", "coding"],
+};
+
+var templates = [
+  ["noun"], 
+  ["adjective", "noun"],
+  ["verb", "noun"],
+];
+
+
+function generatePose() {
+  function getRandom(length) {
+    var rando = Math.floor(Math.random() * 1000);
+    return rando % length;
+  };
+
+  var sentence = [];
+
+  var templateindex = getRandom(templates.length);
+
+  var template = templates[templateindex];
+
+  if (Math.random() < 0.1) {
+    //add to sentence one of the random prefix
+    sentence.push(prefixes[getRandom(prefixes.length)]);
+  }
+
+  if (Math.random() < 0.1) {
+    //add to sentence one of the random prefix
+    sentence.push(directions[getRandom(directions.length)] + "-facing");
+  }
+  //iterate through template to make a random sentence
+  for (var i = 0; i < template.length; i++) {
+    
+    //figure out word type in template (randomly generated)
+    var wordtype = template[i];
+
+    //gets the list of corresponding types of words from words hash
+    var wordlist = words[wordtype];
+
+    //pick a random index to get a random word
+    var wordindex = getRandom(wordlist.length);
+
+    //get the random word
+    sentence.push(wordlist[wordindex]);
+
+  }
+
+  if (sentence.length < 4 && Math.random() < 0.1) {
+    //add to sentence one of the random prefix
+    sentence.push("pose");
+  }
+
+  if (sentence.length == 1) {
+    sentence.push("pose");
+  } 
+
+  console.log(sentence.join(" "));
+
+  return sentence.join(" ");
+}
+
+</script>
+
+<script>
+$(document).ready(function() {
+  $("#getPose").on("click", function() {
+      var yogapose = generatePose();
+      $("#pose-well").html(yogapose);
+      $(".image_outer").css("background", "url(https://source.unsplash.com/category/nature/1600x900)");
+    });
+  });
+</script>
+
+</head>
+
+<body>
+
+<div class="image_outer">
+<div class="container-fluid">
+<div class="row">
+  <div class="header col-md-6" id="title">
+    <p>asanarama</p>
+  </div>
+  <div class="main-nav col-md-6" id="main-nav">
+      <ul id="navlist">
+        <li id="active"><a href="#" id="current">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    
+    <div class="col-sm-6" style="text-align: center">
+      <div class="well">
+        
+        <div class="well" id="pose-well">
+          Pose goes here
+        </div>
+        <div class="col-xs-12"><button id = "getPose" class = "btn btn-primary">Namaste</div>
+      </div>
+    </div>
+     
+     <div class="col-sm-3"></div>
+   </div>
+    <div class="row">
+      <div class="row">
+      
+    <hr>
+    <p align="middle">Coded by <a href="https://github.com/JuFisch">Fischey-Rando</a></p>
+      </div>
+</div>
+    </div>
+</div>
+</body>
+</html>
