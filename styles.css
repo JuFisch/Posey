@@ -10,7 +10,10 @@
 .header {
 	padding-top: 24px;
 	padding-left: 36px;
-	/*color: #2ECC71;
+	padding-bottom: 24px;
+	color: white;
+	text-align: center;
+	/*
 	-webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #28B463;
 	text-align: center;
@@ -25,7 +28,7 @@
 	font-family: Lobster;
 	color: white;
 	font-size: 56px;
-	text-align: left;
+	text-align: center;
 	vertical-align: bottom;
 }
 
@@ -43,9 +46,18 @@ li {
 	display: inline;
 	list-style-type: none;
 	padding: 16px;
+	color: white;
 }
 
 .well {
 	background: rgba(255, 255, 255, 0);
 	color: white;
+	font-family: Helvetica;
+	font-size: 24px;
+	margin: 50px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+    border-radius: 0px;
+    border-radius: 0px;
+    border: 0px;
 }
