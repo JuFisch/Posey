@@ -32,7 +32,32 @@
 	vertical-align: bottom;
 }
 
-#main-nav {
+.btn {
+	background-color: #3498DB;
+}
+
+
+#pose-well {
+	background: rgba(255, 255, 255, 0);
+	border-radius: 50px;
+	font-color: gray;
+	color: white;
+	font-family: Helvetica;
+	font-size: 24px;
+	margin: 50px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+    border-radius: 0px;
+    border-radius: 0px;
+    border: 0px;
+}
+
+#footer {
+	margin-top: 45px;
+	padding-top: 145px;
+}
+
+/*#main-nav {
 	align: right;
 	margin-top: 66px;
 }
@@ -47,17 +72,4 @@ li {
 	list-style-type: none;
 	padding: 16px;
 	color: white;
-}
-
-.well {
-	background: rgba(255, 255, 255, 0);
-	color: white;
-	font-family: Helvetica;
-	font-size: 24px;
-	margin: 50px;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-    border-radius: 0px;
-    border-radius: 0px;
-    border: 0px;
-}
+}*/
