@@ -1,0 +1,37 @@
+diff --git a/index.html b/index.html
+index beb6758..cb00f2f 100644
+--- a/index.html
++++ b/index.html
+@@ -157,6 +157,20 @@ $(document).ready(function() {
+       $(".image_outer").css("background", "url(https://source.unsplash.com/category/nature/1600x900)");
+     });
+   });
++
++
++/* capitalize the first letter of yogapose
++* change background image for each click / 
++</script>
++
++<script>
++  function test() {
++    $(".image_outer").each(function(index) {
++        $(this).hide();
++        $(this).delay(3000* index).fadeIn(3000).fadeOut();
++    });
++  }
++  test();
+ </script>
+ 
+ </head>
+diff --git a/styles.css b/styles.css
+index 6cb3c9e..a4e3041 100644
+--- a/styles.css
++++ b/styles.css
+@@ -1,4 +1,7 @@
+ .image_outer {
++	/*position: absolute;
++	z-index:-1;
++	display: none;*/
+ 	width:100%;
+ 	margin:0 auto;
+ 	padding: 0; 

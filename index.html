@@ -10,6 +10,7 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="yogalolz.js"></script>
 
+
 <script>
 var nouns = [ 
   "chocolate",
@@ -163,11 +164,22 @@ $(document).ready(function() {
   });
 </script>
 
+<script>
+$(window).on("load", function() {
+   $(".image_outer").each(function(index) {
+      $(this).hide();
+      $(this).fadeIn(3000);
+      console.log("faaaaaaaade!");
+    });
+  });
+</script>
+
 </head>
 
 <body>
 
-<div class="image_outer">
+<div class="image_outer"></div>
+
 <div class="container-fluid">
 <div class="row">
   <div class="header" id="title">
@@ -202,6 +214,6 @@ $(document).ready(function() {
       </div>
 </div>
     </div>
-</div>
+
 </body>
 </html>
