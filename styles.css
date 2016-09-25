@@ -21,9 +21,10 @@ body {
 
 .header {
 	padding-top: 24px;
-	padding-left: 36px;
 	padding-bottom: 24px;
+        font-size: 48px;
 	color: white;
+       /*text-shadow: 2px 2px #696969;*/
 	text-align: center;
 	/*
 	-webkit-text-stroke-width: 1px;
@@ -45,23 +46,25 @@ body {
 }
 
 .btn {
+        display: none;
+        font-family: Raleway;
 	background-color: #3498DB;
 }
 
 
 #pose-well {
-	background: rgba(255, 255, 255, 0);
+	background: rgba(51, 51, 51, 0);
 	border-radius: 50px;
 	font-color: gray;
 	color: white;
-	font-family: Helvetica;
+	font-family: Raleway;
 	font-size: 24px;
 	margin: 50px;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
-    border-radius: 0px;
-    border-radius: 0px;
-    border: 0px;
+        border-radius: 0px;
+        border-radius: 0px;
+        border: 0px;
 }
 
 #footer {
@@ -69,6 +72,7 @@ body {
 	margin-top: 45px;
 	padding-top: 145px;
 	font-size: 20px;
+        font-family: Raleway;
 	color: white;
 }
 

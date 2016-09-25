@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -21,6 +22,7 @@ var nouns = [
   "beer bottle",
   "hipster",
   "centipede",
+  "lighter",
   "Republican",
   "Bernie Sanders",
   "puppy",
@@ -36,16 +38,24 @@ var nouns = [
   "cow",
   "goat",
   "velociraptor",
-  "Chris Pratt"
+  "Chris Pratt",
+  "Donald Trump",
+  "cashew",
+  "squirrel",
+  "planty",
+  "Silicon Valley",
+  "smoothie",
+  "winged-keel",
 ];
 
 var prefixes = [
   "extended",
   "half",
-  "reclined",
+  "bound",
   "one-legged",
   "head-to-knee",
-  "revolved"
+  "revolved",
+  "rigid",
 ];
 
 var suffixes = [
@@ -61,7 +71,9 @@ var adjectives = [
   "comatose",
   "supine",
   "buzzed",
-  "bound",
+  "electric",
+  "gluten-free",
+  "fuckin'",
   "planking",
   "naked",
   "fragrant",
@@ -73,6 +85,7 @@ var adjectives = [
   "sunburned",
   "overpaid",
   "disenfranchised",
+  "gusty",
 ];
 
 var directions = [
@@ -84,19 +97,26 @@ var directions = [
   "southward",
  ];
 
+var verbs = [
+  "flying",
+  "coding",
+  "retiring",
+  "lounging",
+];
 
 var words = {
   "noun": nouns,
   "prefix": prefixes,
   "suffix": suffixes,
   "adjective": adjectives,
-  "verb": ["flying", "coding"],
+  "verb": verbs,
 };
 
 var templates = [
   ["noun"], 
   ["adjective", "noun"],
   ["verb", "noun"],
+  ["noun", "suffix"],
 ];
 
 
@@ -148,8 +168,9 @@ function generatePose() {
   } 
 
   console.log(sentence.join(" "));
-
-  return sentence.join(" ");
+  
+  full_sentence = sentence.join(" ");
+  return full_sentence.charAt(0).toUpperCase() + full_sentence.slice(1);
 }
 
 </script>
@@ -171,6 +192,11 @@ $(window).on("load", function() {
       $(this).fadeIn(3000);
       console.log("faaaaaaaade!");
     });
+   $("#getPose").each(function(index) {
+     $(this).hide();
+     $(this).fadeIn(3000);
+     console.log("faaaaaaaade!");
+    });
   });
 </script>
 
@@ -181,39 +207,29 @@ $(window).on("load", function() {
 <div class="image_outer"></div>
 
 <div class="container-fluid">
-<div class="row">
-  <div class="header" id="title">
-    <p>posey</p>
-  </div>
-  <!--<div class="main-nav col-md-6" id="main-nav">
-      <ul id="navlist">
-        <li id="active"><a href="#" id="current">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-  </div>-->
-</div>
-  <div class="row">
-    <div class="col-sm-2"></div>
-    
-    <div class="col-sm-8" style="text-align: center">
-        <div class="well" id="pose-well">
-          
-        </div>
-        <div class="col-xs-12"><button id = "getPose" class = "btn btn-primary"><i>Salvation Lies Within</i></div>
+   <div class="row">
+      <div class="header" id="title">
+         <p>posey</p>
       </div>
-     
-     <div class="col-sm-2"></div>
    </div>
-    <div class="row">
-      <div class="row" id="footer">
-      
-    <hr>
-    <p align="middle">Coded by <a href="https://github.com/JuFisch">Fischey-Rando</a></p>
+   
+   <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8" style="text-align: center">
+         <div class="well" id="pose-well"></div>
+         <div class="col-xs-12">
+            <div id="wrapper"><button type="button" id="getPose" class="btn btn-primary"><i>Salvation Lies Within</i></button></div>
+         </div>
       </div>
+      <div class="col-sm-2"></div>
+   </div>
+    
+   <div class="row">
+      <div class="row" id="footer">
+         <p align="middle">Coded by <a href="https://fischey-rando.com">Fischey-Rando</a></p>
+      </div>
+   </div>
 </div>
-    </div>
 
 </body>
 </html>
